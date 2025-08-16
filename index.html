@@ -1,0 +1,307 @@
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:300,400,500,600,700&family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Brew & Bloom — A cozy specialty coffee shop serving seasonal single-origin coffees, crafted espresso drinks, and house-baked pastries. Order ahead, reserve a tasting, or drop by." />
+  <meta property="og:title" content="Brew & Bloom" />
+  <meta property="og:description" content="Specialty coffee, warm space, friendly service." />
+  <title>Brew & Bloom • Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: 'var(--color-primary)', accent: 'var(--color-accent)' }, boxShadow: { glass: '0 8px 30px rgba(2,6,23,0.45)' } } } }
+  </script>
+  <style>
+    :root{ --color-primary:#7C3AED; --color-accent:#FDE68A; --bg: linear-gradient(180deg,#0b1220 0%, #071021 60%); --text:#f3f4f6; }
+    body{ font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:var(--bg); color:var(--text); }
+    .display-font{ font-family: 'Playfair Display', serif; }
+    .fluid{ width:100% !important; max-width:none !important; }
+    .reveal{ opacity:0; transform: translateY(18px); transition: all 650ms cubic-bezier(.2,.9,.2,1); }
+    .reveal.show{ opacity:1; transform:none; }
+  </style>
+</head>
+<body style="font-family: 'Playfair Display', sans-serif;" class="antialiased leading-relaxed">
+  
+  <header class="w-full fixed top-0 left-0 z-50">
+    <nav class="w-full flex items-center justify-between px-6 py-4 bg-black/30 backdrop-blur-sm">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-black font-bold">B</div>
+        <div class="leading-none">
+          <h1 class="text-xl font-extrabold display-font -mb-1">Brew & Bloom</h1>
+          <p class="text-xs">Specialty Coffee • Pastries</p>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm hover:underline">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm hover:underline">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm hover:underline">Contact</a>
+        <button id="reserveTop" class="ml-2 px-4 py-2 rounded-full bg-primary text-black font-semibold hover:brightness-105">Order / Reserve</button>
+      </div>
+      <div class="md:hidden">
+        <button id="mobileBtn" class="p-2 rounded-md focus:outline-none">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="hidden w-full bg-black/30 backdrop-blur-sm py-4">
+      <div class="flex flex-col gap-3 px-6">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="py-2">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="py-2">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="py-2">Contact</a>
+        <button id="reserveMobile" class="py-2 bg-gradient-to-r from-primary to-accent rounded-md text-black font-semibold">Order / Reserve</button>
+      </div>
+    </div>
+  </header>
+
+  
+  <main class="w-full pt-28 fluid">
+    <section id="hero" class="w-full h-[78vh] relative overflow-hidden" style="background: url('https://pixabay.com/get/gfcb91ef570ac069f46f6159c4344b4f50dc7511c1369f269f1e77f3bcb2b127629a4c0f5f3b0b84f9b80b99a6a934b267fa4566966b8ef3a40cb8a777e9bf156_640.jpg') center/cover no-repeat;">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="absolute inset-0 flex items-center px-8">
+        <div class="w-full lg:w-2/3 p-8 rounded-xl bg-black/30 backdrop-blur-sm reveal">
+          <h2 class="display-font text-4xl md:text-6xl font-bold">Crafted coffee, gentle mornings</h2>
+          <p class="mt-4 text-lg opacity-90">Single-origin espresso, house-roasted blends, and pastries baked daily. Drop by for a slow pour or order ahead for pickup.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#menu" class="px-5 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-black font-semibold">View menu</a>
+            <button id="reserveCta" class="px-5 py-3 rounded-full border border-white/10 hover:bg-white/5">Order ahead</button>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-6 left-8 text-sm opacity-80">Open daily • 7am — 6pm • Walk-ins welcome</div>
+    </section>
+
+    
+    <section id="why" class="w-full py-16 px-8">
+      <div class="flex flex-col md:flex-row gap-6 fluid">
+        <div class="w-full md:w-1/3 p-6 rounded-xl bg-white/5 reveal">
+          <h3 class="text-2xl display-font font-bold">Our approach</h3>
+          <p class="mt-3 opacity-90">We roast thoughtfully, brew intentionally, and bake locally. Our menu celebrates seasonal flavors and fosters community around the cup.</p>
+          <ul class="mt-4 space-y-3">
+            <li class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-black font-bold">1</div><div><strong>Small-batch roasts</strong><div class="text-sm opacity-80">Traceable beans roasted weekly.</div></div></li>
+            <li class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-black font-bold">2</div><div><strong>Seasonal pastries</strong><div class="text-sm opacity-80">Baked fresh each morning from local mills.</div></div></li>
+          </ul>
+        </div>
+        <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article class="p-6 rounded-xl bg-white/5 reveal">
+            <h4 class="text-xl font-semibold">Coffee subscriptions</h4>
+            <p class="mt-2 text-sm opacity-90">Weekly or monthly delivery of our rotating single-origin offerings.</p>
+            <div class="mt-4 text-sm font-semibold">Starting at $18 / week</div>
+          </article>
+          <article class="p-6 rounded-xl bg-white/5 reveal" style="transition-delay:120ms;">
+            <h4 class="text-xl font-semibold">Tasting events</h4>
+            <p class="mt-2 text-sm opacity-90">Guided cuppings and brew-method workshops for small groups.</p>
+            <div class="mt-4 text-sm font-semibold">Reserve a spot</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="menu" class="w-full py-16 px-8 bg-gradient-to-b from-transparent to-black/10">
+      <h3 class="text-3xl display-font text-center">Today’s highlights</h3>
+      <p class="text-center mt-2 opacity-80">Espresso-based favorites and seasonal house specials.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 fluid">
+        <div class="rounded-xl overflow-hidden reveal bg-white/5">
+          <img src="https://images.pexels.com/photos/30359500/pexels-photo-30359500.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Latte" class="w-full h-56 object-cover">
+          <div class="p-5">
+            <h4 class="font-semibold">House Latte</h4>
+            <p class="text-sm opacity-80 mt-1">Single-origin espresso • steamed milk • velvety microfoam</p>
+            <div class="mt-3 text-sm font-bold">$4.25</div>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden reveal" style="transition-delay:120ms;background:rgba(255,255,255,0.02)">
+          <img src="https://pixabay.com/get/g13fcb8d2760ebc54cad503ce85380443fb4b44a703bf65c0b6d2d810404ffff9621006732289602fa8cba1b99dea442602c6e3ad9f587e18af02bfc808271cdc_640.jpg" alt="Pour-over" class="w-full h-56 object-cover">
+          <div class="p-5">
+            <h4 class="font-semibold">Daily Pour-over</h4>
+            <p class="text-sm opacity-80 mt-1">Rotating single-origin • hand-brewed to order</p>
+            <div class="mt-3 text-sm font-bold">$5.50</div>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden reveal" style="transition-delay:220ms;background:rgba(255,255,255,0.02)">
+          <img src="https://images.pexels.com/photos/10822014/pexels-photo-10822014.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Pastry" class="w-full h-56 object-cover">
+          <div class="p-5">
+            <h4 class="font-semibold">Almond Croissant</h4>
+            <p class="text-sm opacity-80 mt-1">Buttery, layered, with house almond frangipane</p>
+            <div class="mt-3 text-sm font-bold">$3.75</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="inline-block px-6 py-3 rounded-full bg-white/10 border border-white/5 hover:bg-white/5">Full menu & wholesale</a>
+      </div>
+    </section>
+
+    
+    <section id="gallery" class="w-full py-16 px-8">
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="w-full md:w-1/2 p-6 rounded-xl bg-white/5 reveal">
+          <h3 class="display-font text-2xl">Community</h3>
+          <p class="mt-3 opacity-90">Meetups, co-working mornings, and weekend workshops. We host weekly cuppings — everyone is welcome.</p>
+          <div class="mt-6 flex gap-3">
+            <img src="https://images.pexels.com/photos/5990513/pexels-photo-5990513.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Window seat" class="w-24 h-24 object-cover rounded-md">
+            <img src="https://images.unsplash.com/photo-1622317236997-97749d3d4215?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw1fHxncm91cCUyMG9mJTIwZnJpZW5kcyUyMGF0JTIwYSUyMGNvZmZlZSUyMHNob3AlMjB0YWJsZSUyMGxhdWdoaW5nfGVufDB8MHx8fDE3NTUzNDIxNDh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Friends" class="w-24 h-24 object-cover rounded-md">
+            <img src="https://pixabay.com/get/g059eaadde4f52c3fc6ea7cd40372ba6f46dd390a21e753f61decd9411a21854c78655bc5d9a96f472069c8167e9c8b7b9001ead90edc895f3629258e789f94bf_640.jpg" alt="Barista" class="w-24 h-24 object-cover rounded-md">
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 p-6 rounded-xl reveal">
+          <h3 class="display-font text-2xl">Tasting notes</h3>
+          <div class="mt-4 space-y-3">
+            <blockquote class="p-4 rounded-lg bg-white/3">"Bright acidity with plum and brown sugar — one of the best pour-overs I've had." <footer class="mt-2 text-sm opacity-80">— Local reviewer</footer></blockquote>
+            <blockquote class="p-4 rounded-lg bg-white/3">"Perfect croissants and a welcoming vibe. Our new favorite morning stop." <footer class="mt-2 text-sm opacity-80">— Harper S.</footer></blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="faq" class="w-full py-16 px-8 bg-gradient-to-t from-black/10 to-transparent">
+      <div class="w-full grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="display-font text-2xl">FAQ</h3>
+          <div class="mt-4 space-y-3">
+            <div class="faq-item p-4 rounded-lg bg-white/3" data-open="false">
+              <button class="w-full text-left flex items-center justify-between" aria-expanded="false"><span class="font-semibold">Do you have dairy-free milk?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <div class="mt-3 text-sm opacity-90 hidden">Yes — oat, almond, and soy milks available at no extra charge.</div>
+            </div>
+            <div class="faq-item p-4 rounded-lg bg-white/3" data-open="false">
+              <button class="w-full text-left flex items-center justify-between" aria-expanded="false"><span class="font-semibold">Do you roast beans on site?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <div class="mt-3 text-sm opacity-90 hidden">We roast weekly in small batches and sell freshly-roasted bags in-store and online.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="display-font text-2xl">Find your brew</h3>
+          <p class="mt-1 opacity-80 text-sm">A quick suggestion based on taste.</p>
+          <form id="miniQuiz" class="mt-4 p-4 rounded-xl bg-white/3">
+            <label class="block text-sm mb-2">Preferred strength</label>
+            <select id="qStrength" class="w-full p-2 rounded bg-transparent border border-white/10">
+              <option>Light & floral</option>
+              <option>Balanced</option>
+              <option>Bold & chocolatey</option>
+            </select>
+            <label class="block text-sm mt-3 mb-2">Preferred brew</label>
+            <select id="qMethod" class="w-full p-2 rounded bg-transparent border border-white/10">
+              <option>Espresso</option>
+              <option>Pour-over</option>
+              <option>French press</option>
+            </select>
+            <div class="mt-4">
+              <div class="h-3 w-full rounded-full bg-white/5 overflow-hidden">
+                <div id="quizProgress" class="h-full w-0 bg-gradient-to-r from-primary to-accent transition-width"></div>
+              </div>
+              <div class="mt-3 flex items-center justify-between text-sm">
+                <span id="quizResult">Choose preferences to get a suggestion</span>
+                <button type="button" id="quizBtn" class="px-3 py-1 bg-primary rounded text-black font-semibold">Suggest</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer class="w-full py-12 px-8 border-t border-white/5 mt-8">
+      <div class="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <h4 class="display-font text-2xl">Order or stop by</h4>
+          <p class="mt-2 text-sm opacity-80">Place an order for pickup or reserve a spot for a tasting.</p>
+        </div>
+        <div class="flex items-center gap-4 w-full md:w-auto">
+          <button id="reserveFooter" class="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-black font-bold">Order / Reserve</button>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="px-4 py-2 border border-white/10 rounded">Contact</a>
+        </div>
+      </div>
+      <div class="mt-6 text-sm opacity-70">© <span id="year"></span> Brew & Bloom · 45 Willow Ave, Your City</div>
+    </footer>
+  </main>
+
+  
+  <div id="reserveModal" class="fixed inset-0 hidden items-center justify-center z-60" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/60" tabindex="-1"></div>
+    <div class="relative w-full rounded-xl p-6" style="width:90%; max-width:900px;">
+      <button id="closeModal" class="absolute top-4 right-4 p-2 rounded focus:outline-none">✕</button>
+      <h3 class="text-2xl font-bold display-font">Order / Reserve</h3>
+      <p class="mt-1 opacity-80">We’ll hold your order or reserve a spot for our tasting events.</p>
+      <form id="reserveForm" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4" novalidate>
+        <label class="block"><span class="text-sm">Name</span><input id="rName" name="name" required class="w-full p-3 rounded bg-transparent border border-white/10 focus:ring-2" /></label>
+        <label class="block"><span class="text-sm">Phone or Email</span><input id="rContact" name="contact" required class="w-full p-3 rounded bg-transparent border border-white/10 focus:ring-2" /></label>
+        <label class="block"><span class="text-sm">Date & Time (optional)</span><input id="rDatetime" type="datetime-local" name="datetime" class="w-full p-3 rounded bg-transparent border border-white/10 focus:ring-2" /></label>
+        <label class="block"><span class="text-sm">Notes</span><textarea id="rNotes" rows="3" class="w-full p-3 rounded bg-transparent border border-white/10 focus:ring-2"></textarea></label>
+        <div class="md:col-span-2 flex items-center gap-4">
+          <button type="submit" class="px-5 py-3 bg-gradient-to-r from-primary to-accent rounded text-black font-semibold">Send request</button>
+          <div id="reserveStatus" class="text-sm opacity-80"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const el = (s)=>document.querySelector(s);
+    const els = (s)=>document.querySelectorAll(s);
+
+    // Mobile menu toggle
+    el('#mobileBtn').addEventListener('click', ()=> el('#mobileMenu').classList.toggle('hidden'));
+
+    // Modal openers
+    const reserveModal = el('#reserveModal');
+    const openButtons = [el('#reserveTop'), el('#reserveMobile'), el('#reserveCta'), el('#reserveFooter')];
+    openButtons.forEach(b=>{ if(b) b.addEventListener('click', openModal); });
+    function openModal(){ reserveModal.classList.remove('hidden'); reserveModal.setAttribute('aria-hidden','false'); el('#rName').focus(); }
+    el('#closeModal').addEventListener('click', closeModal);
+    function closeModal(){ reserveModal.classList.add('hidden'); reserveModal.setAttribute('aria-hidden','true'); }
+    reserveModal.addEventListener('click',(e)=>{ if(e.target===reserveModal) closeModal(); });
+
+    // Reservation form submit (fake POST)
+    const reserveForm = el('#reserveForm');
+    const reserveStatus = el('#reserveStatus');
+    reserveForm && reserveForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const name = el('#rName').value.trim();
+      const contact = el('#rContact').value.trim();
+      if(!name || !contact){ reserveStatus.textContent = 'Please provide name and contact.'; return; }
+      reserveStatus.textContent = 'Sending...';
+      try{
+        const res = await fetch('/api/reserve',{ method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ name, contact, datetime: el('#rDatetime').value, notes: el('#rNotes').value }) });
+        if(res.ok){ reserveStatus.textContent = 'Request received — we will confirm shortly.'; reserveForm.reset(); setTimeout(closeModal,1500); }
+        else reserveStatus.textContent = 'Unable to send. Please call.';
+      }catch(err){ reserveStatus.textContent = 'Network error.'; }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      const btn = item.querySelector('button'); const panel = item.querySelector('div');
+      btn.addEventListener('click', ()=>{
+        const open = item.getAttribute('data-open') === 'true';
+        item.setAttribute('data-open', String(!open));
+        btn.setAttribute('aria-expanded', String(!open));
+        if(!open) panel.classList.remove('hidden'); else panel.classList.add('hidden');
+      });
+    });
+
+    // Mini quiz
+    el('#quizBtn').addEventListener('click', ()=>{
+      const strength = el('#qStrength').value; const method = el('#qMethod').value;
+      let percent = 50; if(strength.includes('Light')) percent -= 20; if(strength.includes('Bold')) percent += 20; if(method==='Espresso') percent += 10; el('#quizProgress').style.width = percent+'%';
+      let suggestion = 'Try our balanced house blend.';
+      if(strength.includes('Light')) suggestion = 'Try a floral single-origin pour-over.';
+      if(strength.includes('Bold')) suggestion = 'Try a double espresso or French press.';
+      el('#quizResult').textContent = suggestion;
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }}); }, { threshold:0.12 });
+    reveals.forEach(r=>io.observe(r));
+
+    // Footer year
+    el('#year').textContent = new Date().getFullYear();
+
+    // Escape to close modal
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeModal(); });
+  </script>
+</body>
+</html>
