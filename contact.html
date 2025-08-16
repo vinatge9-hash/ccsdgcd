@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:300,400,500,600,700&family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact • Brew & Bloom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --color-primary:#7C3AED; --bg:linear-gradient(180deg,#0b1220 0%, #071021 60%); }
+    body{ font-family:'Montserrat',sans-serif; background:var(--bg); color:#f3f4f6; }
+    .fluid{ width:100% !important; max-width:none !important; }
+  </style>
+</head>
+<body style="font-family: 'Playfair Display', sans-serif;" class="antialiased leading-relaxed">
+  <header class="w-full fixed top-0 left-0 z-40 px-6 py-4 bg-black/30 backdrop-blur-sm">
+    <div class="flex items-center justify-between">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent"></div><div>Brew & Bloom</div></a>
+      <nav>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="mr-4">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="mr-4">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-28 fluid px-8">
+    <section class="w-full py-16 grid md:grid-cols-2 gap-8">
+      <div>
+        <h1 class="display-font text-4xl">Get in touch</h1>
+        <p class="mt-3 opacity-90">Questions about wholesale, private tastings, or press? Drop us a message — we reply in 48 hours.</p>
+
+        <div class="mt-6 space-y-4">
+          <div class="p-4 rounded bg-white/5">
+            <strong>Address</strong>
+            <div class="text-sm opacity-80 mt-1">45 Willow Ave, Your City</div>
+          </div>
+          <div class="p-4 rounded bg-white/5">
+            <strong>Phone</strong>
+            <div class="text-sm opacity-80 mt-1">(555) 987-6543</div>
+          </div>
+          <div class="p-4 rounded bg-white/5">
+            <strong>Hours</strong>
+            <div class="text-sm opacity-80 mt-1">Daily 7am–6pm • Weekend tastings 10am–12pm</div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-2xl">Private tastings & events</h3>
+          <p class="mt-2 opacity-90">For groups and workshops, send details and we’ll prepare a custom proposal.</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl">Contact form</h3>
+        <form id="contactForm" class="mt-4 p-4 rounded bg-white/5">
+          <label class="block mb-2"><span class="text-sm">Name</span><input id="cName" required class="w-full p-2 rounded bg-transparent border border-white/10" /></label>
+          <label class="block mb-2"><span class="text-sm">Email</span><input id="cEmail" type="email" required class="w-full p-2 rounded bg-transparent border border-white/10" /></label>
+          <label class="block mb-2"><span class="text-sm">Message</span><textarea id="cMessage" rows="5" required class="w-full p-2 rounded bg-transparent border border-white/10"></textarea></label>
+          <div class="flex items-center gap-4">
+            <button type="submit" class="px-4 py-2 bg-primary rounded text-black font-semibold">Send message</button>
+            <div id="contactStatus" class="text-sm opacity-80"></div>
+          </div>
+        </form>
+
+        <div class="mt-6">
+          <h4 class="text-lg">Find us</h4>
+          <div class="mt-3 rounded overflow-hidden shadow-lg">
+            <img src="https://images.unsplash.com/photo-1674840690412-f9fdc70d5430?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw0fHxtYXAlMjB2aWV3JTIwaGlnaGxpZ2h0aW5nJTIwYSUyMGNvZmZlZSUyMHNob3AlMjBsb2NhdGlvbiUyMHdpdGglMjBzdXJyb3VuZGluZyUyMHN0cmVldHN8ZW58MHwwfHx8MTc1NTM0MjE1Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Map" class="w-full h-64 object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="w-full py-12 border-t border-white/5 text-sm opacity-80">
+      <div>© <span id="yearContact"></span> Brew & Bloom · Built with care</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('yearContact').textContent = new Date().getFullYear();
+    const contactForm = document.getElementById('contactForm');
+    const contactStatus = document.getElementById('contactStatus');
+    contactForm && contactForm.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      contactStatus.textContent = 'Sending...';
+      const payload = { name: document.getElementById('cName').value, email: document.getElementById('cEmail').value, message: document.getElementById('cMessage').value };
+      try{
+        const res = await fetch('/api/contact',{ method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
+        if(res.ok){ contactStatus.textContent = 'Thanks — we will reply shortly.'; contactForm.reset(); } else contactStatus.textContent = 'Unable to send. Please call.';
+      }catch(err){ contactStatus.textContent = 'Network error.'; }
+    });
+  </script>
+</body>
+</html>
