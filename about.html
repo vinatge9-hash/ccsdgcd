@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:300,400,500,600,700&family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About • Brew & Bloom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --color-primary:#7C3AED; --color-accent:#FDE68A; --bg:linear-gradient(180deg,#0b1220 0%, #071021 60%); }
+    body{ font-family: 'Montserrat', sans-serif; background:var(--bg); color:#f3f4f6; }
+    .display-font{ font-family: 'Playfair Display', serif; }
+    .fluid{ width:100% !important; max-width:none !important; }
+    .reveal{ opacity:0; transform: translateY(18px); transition: all 650ms cubic-bezier(.2,.9,.2,1); }
+    .reveal.show{ opacity:1; transform:none; }
+  </style>
+</head>
+<body style="font-family: 'Playfair Display', sans-serif;" class="antialiased leading-relaxed">
+  <header class="w-full fixed top-0 left-0 z-40 px-6 py-4 bg-black/30 backdrop-blur-sm">
+    <div class="flex items-center justify-between">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent"></div><div class="leading-none"><h2 class="display-font font-bold">Brew & Bloom</h2></div></a>
+      <nav>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="mr-4">Home</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="mr-4">About</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-28 fluid">
+    <section class="w-full px-8 py-16 grid md:grid-cols-2 gap-8">
+      <div class="reveal">
+        <h1 class="display-font text-5xl">Our story</h1>
+        <p class="mt-4 text-lg opacity-90">Brew & Bloom started as a small roastery and grew into a neighborhood cafe where neighbors gather. We care about provenance, roast small batches, and craft drinks that highlight the unique character of each bean.</p>
+        <p class="mt-4">We partner with farmers who practice regenerative agriculture and share tasting notes with transparency. Every bag we sell tells a story of origin and craft.</p>
+      </div>
+      <div class="reveal" style="transition-delay:120ms">
+        <div class="rounded-xl overflow-hidden shadow-lg">
+          <img src="https://images.pexels.com/photos/32965523/pexels-photo-32965523.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Cafe exterior" class="w-full h-96 object-cover">
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full px-8 py-16">
+      <h2 class="display-font text-3xl">Meet the team</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 fluid">
+        <div class="p-4 rounded-xl bg-white/5 reveal">
+          <img src="https://pixabay.com/get/gcc0eb3a3625f2eb6725218e615f2ef36246aa1af2dadb421cb5078c08eb5275d4251b69f149015f7ad088b67e838417a_640.jpg" alt="Founder" class="w-full h-48 object-cover rounded-md mb-3">
+          <h4 class="font-semibold">Ava Chen</h4>
+          <p class="text-sm opacity-80">Founder & Head Roaster — Ava sources beans with care and designs seasonal roasts.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 reveal" style="transition-delay:80ms">
+          <img src="https://images.pexels.com/photos/460257/pexels-photo-460257.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Coffee director" class="w-full h-48 object-cover rounded-md mb-3">
+          <h4 class="font-semibold">Marcus Lee</h4>
+          <p class="text-sm opacity-80">Coffee Director — brewing technique and education lead.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 reveal" style="transition-delay:160ms">
+          <img src="https://pixabay.com/get/g05b9501c2e21aa89ee77b041596e5d18642cd2a5daef27ebc7474046e009388eb0e961c34c948eea8ad6278a4a5e264d1d77a9d1ad14937a5eb3b0fdebfb9d67_640.jpg" alt="Baker" class="w-full h-48 object-cover rounded-md mb-3">
+          <h4 class="font-semibold">Rosa Diaz</h4>
+          <p class="text-sm opacity-80">Head Baker — pastries and seasonal specials.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 reveal" style="transition-delay:240ms">
+          <img src="https://images.unsplash.com/photo-1581435507432-22da092f3175?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwyfHxmcmllbmRseSUyMGNhZmUlMjBtYW5hZ2VyJTIwZ3JlZXRpbmclMjBjdXN0b21lcnN8ZW58MHwwfHx8MTc1NTM0MjE1Mnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Manager" class="w-full h-48 object-cover rounded-md mb-3">
+          <h4 class="font-semibold">Eli Park</h4>
+          <p class="text-sm opacity-80">General Manager — events and community partnerships.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full px-8 py-16 bg-gradient-to-b from-transparent to-black/10">
+      <h2 class="display-font text-3xl">Sourcing</h2>
+      <p class="mt-4">We emphasize relationships: direct trade where possible, clear origin notes, and a commitment to sustainable practices across our supply chain.</p>
+      <ul class="mt-4 space-y-2">
+        <li>• Direct partnerships with smallholder farms</li>
+        <li>• Transparent roast and tasting notes</li>
+        <li>• Community-focused events and workshops</li>
+      </ul>
+    </section>
+
+    <footer class="w-full px-8 py-12 border-t border-white/5 text-sm opacity-80">
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="mr-4">Home</a>
+      <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;">Contact</a>
+      <div class="mt-3">© <span id="yearAbout"></span> Brew & Bloom</div>
+    </footer>
+  </main>
+
+  <script>
+    document.querySelectorAll('.reveal').forEach(el=>{ const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }}); },{threshold:0.12}); io.observe(el); });
+    document.getElementById('yearAbout').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
